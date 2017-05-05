@@ -9,18 +9,18 @@ package dominio;
 public class Asesino extends Casta {
 
 	private static final int ENERGIA_MINIMA = 3;
-	private static final double INCREMENTO_EVITAR_DAﾃ前 = 0.15;
-	private static final double MAX_PROBABILIDAD_EVITAR_DAﾃ前 = 0.5;
+	private static final double INCREMENTO_EVITAR_DAﾑO = 0.15;
+	private static final double MAX_PROBABILIDAD_EVITAR_DAﾑO = 0.5;
 
 	/**
 	 * Constructor de asesinos con parﾃ｡metros.
 	 * @param prob_crit es la probabilidad de golpe critico
 	 * @param evasion evasion
-	 * @param daﾃｱo_crit es el daﾃｱo crﾃｭtico
+	 * @param da_crit es el da crﾃｭtico
 	 */
 
-	public Asesino(final double prob_crit, final double evasion, final double daﾃｱo_crit) {
-		super("Asesino", prob_crit, evasion, daﾃｱo_crit);
+	public Asesino(final double prob_crit, final double evasion, final double da_crit) {
+		super("Asesino", prob_crit, evasion, da_crit);
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class Asesino extends Casta {
 
 	/**
 	 * Sobreescribe la habilidad1 de la clase padre.
-	 * @param caster es el personaje a traves del cual se obtiene el daﾃｱo y al que se
+	 * @param caster es el personaje a traves del cual se obtiene el da y al que se
 	 * le decrementa la energﾃｭa.
 	 * @param atacado es el objecto que serﾃ｡ atacado.
 	 * @return verdadero o falso para la utilizaciﾃｳn del golpe critico
@@ -44,7 +44,7 @@ public class Asesino extends Casta {
 	public boolean habilidad1(final Personaje caster, final Peleable atacado) {
 		if (caster.getEnergia() > ENERGIA_MINIMA) {
 			caster.setEnergia(caster.getEnergia() - ENERGIA_MINIMA);
-			if (atacado.serAtacado((int) (caster.ataque * caster.getCasta().getDaﾃｱoCritico())) > 0) {
+			if (atacado.serAtacado((int) (caster.ataque * caster.getCasta().getDaCritico())) > 0) {
 				return true;
 			}
 		}
@@ -62,10 +62,10 @@ public class Asesino extends Casta {
 	public boolean habilidad2(final Personaje caster, final Peleable atacado) {
 		if (caster.getEnergia() > ENERGIA_MINIMA) {
 			caster.setEnergia(caster.getEnergia() - ENERGIA_MINIMA);
-			if (this.getProbabilidadEvitarDaﾃｱo() + INCREMENTO_EVITAR_DAﾃ前 < MAX_PROBABILIDAD_EVITAR_DAﾃ前) {
-				this.probabilidadEvitarDaﾃｱo += INCREMENTO_EVITAR_DAﾃ前;
+			if (this.getProbabilidadEvitarDa() + INCREMENTO_EVITAR_DAﾑO < MAX_PROBABILIDAD_EVITAR_DAﾑO) {
+				this.probabilidadEvitarDa += INCREMENTO_EVITAR_DAﾑO;
 			} else {
-				this.probabilidadEvitarDaﾃｱo = MAX_PROBABILIDAD_EVITAR_DAﾃ前;
+				this.probabilidadEvitarDa = MAX_PROBABILIDAD_EVITAR_DAﾑO;
 			}
 			return true;
 		}

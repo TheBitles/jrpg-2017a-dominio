@@ -243,7 +243,7 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 
 	public void setClan(final Alianza clan) {
 		this.clan = clan;
-		clan.añadirPersonaje(this);
+		clan.a�adirPersonaje(this);
 	}
 
 	public int getEnergia() {
@@ -374,7 +374,7 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 	 * "atacar" obtiene el ataque de este objeto e invoca al método serAtacado
 	 * del "atacado" recibido como parametro.
 	 * @param atacado atacado
-	 * @return daño ocasionado al atacar
+	 * @return da�o ocasionado al atacar
 	 */
 
 	public int atacar(final Peleable atacado) {
@@ -393,11 +393,11 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 
 	/**
 	 * @return calculo del valor del golpe critico basado en el
-	 * ataque y el daño de la casta.
+	 * ataque y el da�o de la casta.
 	 */
 
 	public int golpe_critico() {
-		return (int) (this.ataque * this.getCasta().getDañoCritico());
+		return (int) (this.ataque * this.getCasta().getDa�oCritico());
 	}
 
 	/**
@@ -470,22 +470,22 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 	}
 
 	/**
-	 * Aplica un daño sobre la salud.
-	 * @param daño daño
-	 * @return 0 si no es dañado o el valor del daño ocasionado por el ataque.
+	 * Aplica un da�o sobre la salud.
+	 * @param da�o da�o
+	 * @return 0 si no es da�ado o el valor del da�o ocasionado por el ataque.
 	 */
 
-	public int serAtacado(int daño) {
-		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
-			daño -= this.defensa;
-			if (daño > 0) {
-				if (salud <= daño) {
-					daño = salud;
+	public int serAtacado(int da�o) {
+		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDa�o()) {
+			da�o -= this.defensa;
+			if (da�o > 0) {
+				if (salud <= da�o) {
+					da�o = salud;
 					salud = 0;
 				} else {
-					salud -= daño;
+					salud -= da�o;
 				}
-				return daño;
+				return da�o;
 			}
 			return 0;
 		}
@@ -493,45 +493,45 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 	}
 
 	/**
-	 * Aplica un daño a la salud y devuelve la cantidad del
+	 * Aplica un da�o a la salud y devuelve la cantidad del
 	 * mismo que se ha inflingido.
-	 * @param daño daño
-	 * @return daño que se ha inflingido.
+	 * @param da�o da�o
+	 * @return da�o que se ha inflingido.
 	 */
 
-	public int serRobadoSalud(int daño) {
-		daño -= this.defensa;
-		if (daño <= 0) {
+	public int serRobadoSalud(int da�o) {
+		da�o -= this.defensa;
+		if (da�o <= 0) {
 			return 0;
 		}
-		if ((salud - daño) >= 0) {
-			salud -= daño;
+		if ((salud - da�o) >= 0) {
+			salud -= da�o;
 		} else {
-			daño = salud;
+			da�o = salud;
 			salud = 0;
 		}
-		return daño;
+		return da�o;
 	}
 
 	/**
-	 * Aplica daño a la energia y devuelve la cantidad del
+	 * Aplica da�o a la energia y devuelve la cantidad del
 	 * mismo que se ha inflingido.
-	 * @param daño daño
-	 * @return daño que se ha inflingido.
+	 * @param da�o da�o
+	 * @return da�o que se ha inflingido.
 	 */
 
-	public int serDesenergizado(int daño) {
-		daño -= this.defensa;
-		if (daño <= 0) {
+	public int serDesenergizado(int da�o) {
+		da�o -= this.defensa;
+		if (da�o <= 0) {
 			return 0;
 		}
-		if ((energia - daño) >= 0) {
-			energia -= daño;
+		if ((energia - da�o) >= 0) {
+			energia -= da�o;
 		} else {
-			daño = energia;
+			da�o = energia;
 			energia = 0;
 		}
-		return daño;
+		return da�o;
 	}
 
 	/**
@@ -568,7 +568,7 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 
 	public void crearAlianza(final String nombre_alianza) {
 		this.clan = new Alianza(nombre_alianza);
-		this.clan.añadirPersonaje(this);
+		this.clan.a�adirPersonaje(this);
 	}
 
 	/**
@@ -593,12 +593,12 @@ public abstract class Personaje extends Character implements Peleable, Serializa
 		if (this.clan == null) {
 			Alianza a = new Alianza("Alianza 1");
 			this.clan = a;
-			a.añadirPersonaje(this);
+			a.a�adirPersonaje(this);
 		}
 
 		if (nuevo_aliado.clan == null) {
 			nuevo_aliado.clan = this.clan;
-			this.clan.añadirPersonaje(nuevo_aliado);
+			this.clan.a�adirPersonaje(nuevo_aliado);
 			return true;
 		} else {
 			return false;

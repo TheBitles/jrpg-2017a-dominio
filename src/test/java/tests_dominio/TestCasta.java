@@ -15,11 +15,11 @@ public class TestCasta {
 		h.setProbabilidadGolpeCritico(0.5);
 		Assert.assertTrue(0.5 == h.getProbabilidadGolpeCritico());
 
-		h.setProbabilidadEvitarDaÃ±o(0.5);
-		Assert.assertTrue(0.5 == h.getProbabilidadEvitarDaÃ±o());
+		h.setProbabilidadEvitarDaño(0.5);
+		Assert.assertTrue(0.5 == h.getProbabilidadEvitarDaño());
 
-		h.setDaÃ±oCritico(0.5);
-		Assert.assertTrue(0.5 == h.getDaÃ±oCritico());
+		h.setDañoCritico(0.5);
+		Assert.assertTrue(0.5 == h.getDañoCritico());
 
 		Assert.assertTrue("Hechicero" == h.getNombreCasta());
 		Assert.assertTrue("Bola de Fuego" == h.getHabilidadesCasta()[0]);
