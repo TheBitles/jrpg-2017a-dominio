@@ -62,7 +62,7 @@ public class NonPlayableCharacter extends Character implements Peleable {
 	 * "atacar" obtiene el ataque de este objeto e invoca al método serAtacado
 	 * del "atacado" recibido como parametro.
 	 * @param atacado atacado
-	 * @return da�o ocasionado al atacar
+	 * @return daño ocasionado al atacar
 	 */
 
 	public int atacar(final Peleable atacado) {
@@ -74,18 +74,18 @@ public class NonPlayableCharacter extends Character implements Peleable {
 	}
 
 	/**
-	 * "serAtacado" devuelve 0 si no es da�ado o si esquivo el golpe o
-	 * el valor del da�o ocasionado por el ataque.
-	 * @param da�o da�o
-	 * @return da�o ocasionado al atacar.
+	 * "serAtacado" devuelve 0 si no es dañado o si esquivo el golpe o
+	 * el valor del daño ocasionado por el ataque.
+	 * @param daño daño
+	 * @return daño ocasionado al atacar.
 	 */
 
-	public int serAtacado(int da�o) {
+	public int serAtacado(int daño) {
 		if (MyRandom.nextDouble() >= PORCENTAJE_GOLPE_CRITICO) {
-			da�o -= this.getDefensa() / 2;
-			if (da�o > 0) {
-				salud -= da�o;
-				return da�o;
+			daño -= this.getDefensa() / 2;
+			if (daño > 0) {
+				salud -= daño;
+				return daño;
 			}
 			return 0;
 		}
@@ -134,20 +134,20 @@ public class NonPlayableCharacter extends Character implements Peleable {
 	public void serCurado(final int salud) {}
 
 	/**
-	 * @param da�o no utilizado
+	 * @param daño no utilizado
 	 * @return 0
 	 */
 
-	public int serDesenergizado(final int da�o) {
+	public int serDesenergizado(final int daño) {
 		return 0;
 	}
 
 	/**
-	 * @param da�o no utilizado
+	 * @param daño no utilizado
 	 * @return 0
 	 */
 
-	public int serRobadoSalud(final int da�o) {
+	public int serRobadoSalud(final int daño) {
 		return 0;
 	}
 

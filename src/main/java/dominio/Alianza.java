@@ -63,7 +63,7 @@ public class Alianza {
 	 * @param pj es el personaje a añadir
 	 */
 
-	public void a�adirPersonaje(final Personaje pj) {
+	public void añadirPersonaje(final Personaje pj) {
 		aliados.add(pj);
 	}
 }

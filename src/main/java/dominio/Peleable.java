@@ -10,10 +10,10 @@ public interface Peleable {
 
 	/**
 	 * Ser Atacado
-	 * @param daño realizado
-	 * @return daño realizado efectivamente
+	 * @param daÃ±o realizado
+	 * @return daÃ±o realizado efectivamente
 	 */
-	int serAtacado(int daño);
+	int serAtacado(int daÃ±o);
 
 	/**
 	 * Get Salud
@@ -79,20 +79,20 @@ public interface Peleable {
 	void setDefensa(final int defensa);
 
 	/**
-	 * Aplica daño a la energia y devuelve la cantidad del
+	 * Aplica daÃ±o a la energia y devuelve la cantidad del
 	 * mismo que se ha inflingido.
-	 * @param daño daño
-	 * @return daño que se ha inflingido.
+	 * @param daÃ±o daÃ±o
+	 * @return daÃ±o que se ha inflingido.
 	 */
 
-	int serDesenergizado(int daño);
+	int serDesenergizado(int daÃ±o);
 
 	/**
-	 * Aplica un daño a la salud y devuelve la cantidad del
+	 * Aplica un daÃ±o a la salud y devuelve la cantidad del
 	 * mismo que se ha inflingido.
-	 * @param daño daño
-	 * @return daño que se ha inflingido.
+	 * @param daÃ±o daÃ±o
+	 * @return daÃ±o que se ha inflingido.
 	 */
 
-	int serRobadoSalud(int daño);
+	int serRobadoSalud(int daÃ±o);
 }
